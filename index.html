@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gesetzliche Krankenversicherung vergleichen – Wirtschaftsberatung Boris Hauschild e. K.</title>
+<meta name="description" content="Finanz App, Finanzberatung, digitaler Versicherungsordner, Makler PKV, BU, Onlineberatung, Gutachten, Experte für betriebliche Altersversorgung, bAV">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --flaeche: #ffffff;
+    --tinte: #16181d;
+    --mittel: #5b616e;
+    --hell: #9097a3;
+    --linie: #e6e6e1;
+    --akzent: #1f5c4a;
+    --akzent-hell: #e8f0ec;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--tinte); font-family: "Figtree", system-ui, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .breite { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Kopf */
+  .leiste-oben { border-bottom: 1px solid var(--linie); font-size: 13px; color: var(--mittel); }
+  .leiste-oben .breite { display: flex; justify-content: flex-end; align-items: center; gap: 22px; height: 38px; }
+  .leiste-oben a:hover { color: var(--tinte); }
+
+  header.kopf { position: sticky; top: 0; z-index: 50; background: rgba(247,247,245,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--linie); }
+  .kopf .breite { display: flex; align-items: center; gap: 24px; height: 76px; }
+  .logo img { display: block; height: 48px; width: auto; border-radius: 6px; }
+  nav.haupt { flex: 1; }
+  nav.haupt > ul { list-style: none; display: flex; gap: 4px; justify-content: center; }
+  nav.haupt > ul > li { position: relative; }
+  nav.haupt > ul > li > a { display: block; white-space: nowrap; padding: 10px 12px; font-size: 14px; font-weight: 500; color: var(--mittel); border-radius: 8px; transition: color .15s, background .15s; }
+  nav.haupt > ul > li:hover > a, nav.haupt > ul > li.aktiv > a { color: var(--tinte); background: rgba(0,0,0,0.04); }
+  nav.haupt > ul > li.aktiv > a { color: var(--akzent); }
+  .unter { position: absolute; top: calc(100% + 6px); left: 50%; transform: translate(-50%, 6px); min-width: 260px; background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: 8px; list-style: none; opacity: 0; visibility: hidden; transition: opacity .15s, transform .15s, visibility .15s; box-shadow: 0 12px 32px rgba(20,24,30,0.08); }
+  .unter.zwei { column-count: 2; min-width: 460px; column-gap: 4px; }
+  nav.haupt li:hover > .unter, nav.haupt li:focus-within > .unter { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .unter li { break-inside: avoid; }
+  .unter a { display: block; padding: 8px 12px; font-size: 14px; color: var(--mittel); border-radius: 8px; }
+  .unter a:hover { background: var(--bg); color: var(--tinte); }
+  .unter a.aktiv { background: var(--akzent-hell); color: var(--akzent); font-weight: 600; }
+
+  .suche { position: relative; }
+  .suche input { width: 150px; height: 38px; border: 1px solid var(--linie); border-radius: 999px; background: var(--flaeche); padding: 0 14px 0 36px; font: inherit; font-size: 14px; color: var(--tinte); outline: none; transition: border-color .15s, width .2s; }
+  .suche input:focus { border-color: var(--akzent); width: 200px; }
+  .suche svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--hell); }
+
+  .menue-knopf { display: none; background: none; border: 1px solid var(--linie); border-radius: 10px; width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; color: var(--tinte); }
+
+  /* Kopfbild */
+  .held { padding-top: 32px; }
+  .pfad { font-size: 13px; color: var(--hell); display: flex; gap: 8px; flex-wrap: wrap; }
+  .pfad a:hover { color: var(--tinte); }
+  .bild { margin-top: 16px; border-radius: 20px; overflow: hidden; aspect-ratio: 1170 / 450; background: #ddd; max-width: 1170px; }
+  .bild img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+
+  /* Inhalt */
+  .inhalt { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; padding: 48px 24px 96px; align-items: start; }
+  h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
+  .rechner { margin-top: 28px; background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); overflow: hidden; }
+  .rechner iframe { display: block; width: 100%; height: 1700px; border: 0; }
+
+  aside.kontakt { position: sticky; top: 100px; background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: 28px; }
+  .kontakt h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hell); }
+  .kontakt .firma { margin-top: 14px; font-weight: 600; font-size: 17px; line-height: 1.3; }
+  .kontakt address { font-style: normal; color: var(--mittel); margin-top: 4px; }
+  .kontakt dl { margin-top: 20px; display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; font-size: 15px; }
+  .kontakt dt { color: var(--hell); }
+  .kontakt dd a:hover { color: var(--akzent); }
+  .knopf { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 24px; height: 48px; border-radius: 999px; background: var(--akzent); color: #fff; font-weight: 600; font-size: 15px; transition: background .15s; }
+  .knopf:hover { background: #174a3b; }
+
+  /* Fuß */
+  footer { border-top: 1px solid var(--linie); background: var(--flaeche); }
+  footer .breite { padding-top: 48px; padding-bottom: 40px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  footer .text { color: var(--mittel); font-size: 15px; max-width: 520px; }
+  footer .rechtlich { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  footer .rechtlich a { color: var(--tinte); font-weight: 500; }
+  footer .rechtlich a:hover { color: var(--akzent); }
+  .copy { border-top: 1px solid var(--linie); font-size: 13px; color: var(--hell); }
+  .copy .breite { display: flex; flex-wrap: wrap; gap: 6px 18px; padding-top: 20px; padding-bottom: 20px; }
+  .copy a:hover { color: var(--tinte); }
+
+  /* Chat */
+  .chat { position: fixed; right: 24px; bottom: 24px; z-index: 60; }
+  .chat-knopf { display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px 0 18px; border-radius: 999px; border: 0; background: var(--tinte); color: #fff; font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; box-shadow: 0 10px 30px rgba(20,24,30,0.2); }
+  .chat-feld { position: absolute; right: 0; bottom: 64px; width: 320px; background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: 22px; box-shadow: 0 16px 40px rgba(20,24,30,0.14); display: none; }
+  .chat.offen .chat-feld { display: block; }
+  .chat-feld h4 { font-size: 16px; font-weight: 600; }
+  .chat-feld p { margin-top: 8px; color: var(--mittel); font-size: 14px; }
+  .chat-feld .knopf { margin-top: 16px; height: 44px; font-size: 14px; }
+
+  /* Handy */
+  @media (max-width: 1180px) {
+    nav.haupt, .suche { display: none; }
+    .menue-knopf { display: inline-flex; margin-left: auto; }
+    .kopf.offen nav.haupt { display: block; position: absolute; top: 76px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--linie); max-height: calc(100vh - 76px); overflow-y: auto; padding: 8px 16px 24px; }
+    .kopf.offen nav.haupt > ul { flex-direction: column; gap: 0; }
+    .kopf.offen nav.haupt > ul > li > a { padding: 14px 8px; font-size: 16px; color: var(--tinte); border-bottom: 1px solid var(--linie); border-radius: 0; }
+    .kopf.offen .unter, .kopf.offen .unter.zwei { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; min-width: 0; column-count: 1; padding: 4px 0 8px 8px; display: none; background: transparent; }
+    .kopf.offen li.auf > .unter { display: block; }
+    .inhalt { grid-template-columns: 1fr; }
+    aside.kontakt { position: static; }
+  }
+  @media (max-width: 640px) {
+    .breite { padding: 0 16px; }
+    .leiste-oben .breite { justify-content: center; }
+    .inhalt { padding: 32px 16px 120px; gap: 28px; }
+    .bild { border-radius: 14px; aspect-ratio: 16 / 9; }
+    footer .breite { grid-template-columns: 1fr; gap: 28px; }
+    .chat { right: 16px; bottom: 16px; }
+    .chat-knopf { width: 56px; height: 56px; padding: 0; justify-content: center; }
+    .chat-knopf span { display: none; }
+    .chat-feld { width: calc(100vw - 32px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="leiste-oben">
+  <div class="breite">
+    <a href="https://finanzcoach.net/home/kontakt/datenschutz/">Datenschutz</a>
+    <a href="https://finanzcoach.net/home/kontakt/impressum/">Impressum</a>
+    <a href="https://finanzcoach.net/home/anfahrt/">Anfahrt</a>
+    <a href="https://finanzcoach.net/home/kontakt/">Kontakt</a>
+  </div>
+</div>
+
+<header class="kopf" id="kopf">
+  <div class="breite">
+    <a class="logo" href="https://finanzcoach.net/"><img src="https://cdn.makleraccess.de/wp-content/uploads/sites/1469/2018/04/koffer_qhd-178x100.jpg" alt="Logo" width="178" height="100"></a>
+
+    <nav class="haupt" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="https://finanzcoach.net/">Home</a>
+          <ul class="unter">
+            <li><a href="https://finanzcoach.net/home/wir-ueber-uns/">Wir über uns</a></li>
+            <li><a href="https://finanzcoach.net/home/aktuelles/">Aktuelles</a></li>
+            <li><a href="https://finanzcoach.net/home/anfahrt/">Anfahrt</a></li>
+            <li><a href="https://finanzcoach.net/home/kontakt/">Kontakt</a></li>
+            <li><a href="https://finanzcoach.net/home/kontakt/anbieterkennung/">Anbieterkennung</a></li>
+            <li><a href="https://finanzcoach.net/home/kontakt/datenschutz/">Datenschutz</a></li>
+            <li><a href="https://finanzcoach.net/home/kontakt/impressum/">Impressum</a></li>
+          </ul>
+        </li>
+        <li><a href="https://finanzcoach.net/gewerbe-versicherungen/">Gewerbe-Versicherungen</a>
+          <ul class="unter">
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/betriebshaftpflicht/">Betriebshaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/elektronikversicherung/">Elektronikversicherung</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/inventarversicherung/">Inventarversicherung</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/kautionsversicherung/">Kautionsversicherung</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/lkw-versicherung/">LKW-Versicherung</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/pkw-gewerbliche-nutzung/">PKW (gewerbliche Nutzung)</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/rechtsschutz-fuer-firmen/">Rechtsschutz für Firmen</a></li>
+            <li><a href="https://finanzcoach.net/gewerbe-versicherungen/veranstaltungshaftpflicht/">Veranstaltungshaftpflicht</a></li>
+          </ul>
+        </li>
+        <li class="aktiv"><a href="https://finanzcoach.net/krankenversicherungen/">Krankenversicherungen</a>
+          <ul class="unter">
+            <li><a href="https://finanzcoach.net/krankenversicherungen/reisekranken-fuer-au-pairs-schueler-studenten-et-al/">Reisekranken für Au Pairs, Schüler, Studenten, et al.</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/dauerreise/">Dauerreise</a></li>
+            <li><a class="aktiv" href="https://finanzcoach.net/krankenversicherungen/gesetzliche-krankenversicherung/">Gesetzliche Krankenversicherung</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/krankentagegeld/">Krankentagegeld</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/krankenzusatz/">Krankenzusatz</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/pflegetagegeld/">Pflegetagegeld</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/private-krankenversicherung/">Private Krankenversicherung</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/reisekrankenversicherung/">Reisekrankenversicherung</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/stationaere-zusatzversicherung/">Stationäre Zusatzversicherung</a></li>
+            <li><a href="https://finanzcoach.net/krankenversicherungen/zahnzusatzversicherung/">Zahnzusatzversicherung</a></li>
+          </ul>
+        </li>
+        <li><a href="https://finanzcoach.net/vorsorge-kapital/">Vorsorge &amp; Kapital</a>
+          <ul class="unter">
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/berufsunfaehigkeit/">Berufsunfähigkeit</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/einkommensversicherung/">Einkommensversicherung</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/grundfaehigkeitenversicherung/">Grundfähigkeitenversicherung</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/reiseversicherung/">Reiseversicherung</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/rente/">Rente</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/rente-gegen-einmalzahlung/">Rente gegen Einmalzahlung</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/riester/">Riester</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/risikoleben/">Risikoleben</a></li>
+            <li><a href="https://finanzcoach.net/vorsorge-kapital/sterbegeld/">Sterbegeld</a></li>
+          </ul>
+        </li>
+        <li><a href="https://finanzcoach.net/privat-versicherungen/">Privat-Versicherungen</a>
+          <ul class="unter zwei">
+            <li><a href="https://finanzcoach.net/privat-versicherungen/anhaengerversicherung/">Anhängerversicherung</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/bauherrenhaftpflicht/">Bauherrenhaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/bauleistungsversicherung/">Bauleistungsversicherung</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/bootsversicherung/">Bootsversicherung</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/gewaesserschadenhaftpflicht/">Gewässerschadenhaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/glasbruch/">Glasbruch</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/haus-grundstueckshaftpflicht/">Haus- &amp; Grundstückshaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/hausrat/">Hausrat</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/hunde-und-katzen-op-versicherung/">Hunde und Katzen-OP Versicherung</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/hundehaftpflicht/">Hundehaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/motorrad/">Motorrad</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/pferdehalterhaftpflicht/">Pferdehalterhaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/photovoltaik/">Photovoltaik</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/pkw-nur-private-nutzung/">PKW (nur private Nutzung)</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/privathaftpflicht/">Privathaftpflicht</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/rechtsschutz/">Rechtsschutz</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/unfallversicherung/">Unfallversicherung</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/wohngebaeude/">Wohngebäude</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/wohnmobilversicherung/">Wohnmobilversicherung</a></li>
+            <li><a href="https://finanzcoach.net/privat-versicherungen/wohnwagenversicherung/">Wohnwagenversicherung</a></li>
+          </ul>
+        </li>
+        <li><a href="https://finanzcoach.net/service-center/">Service-Center</a>
+          <ul class="unter">
+            <li><a href="https://finanzcoach.net/service-center/kunden-app/">Kunden-App</a></li>
+            <li><a href="https://finanzcoach.net/service-center/online-schadensmeldung/">Online Schadensmeldung</a></li>
+            <li><a href="https://finanzcoach.net/service-center/datenaenderung/">Datenänderung</a></li>
+            <li><a href="https://finanzcoach.net/service-center/versicherungsunterlagen-anfordern/">Versicherungsunterlagen anfordern</a></li>
+            <li><a href="https://finanzcoach.net/service-center/beratungstermin-vereinbaren/">Beratungstermin vereinbaren</a></li>
+            <li><a href="https://finanzcoach.net/service-center/mandatierungs-dokumente/">Mandatierungs-Dokumente</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <form class="suche" action="https://finanzcoach.net/" method="get" role="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" name="s" placeholder="Suchen …" aria-label="Suchen">
+    </form>
+
+    <button class="menue-knopf" id="menue-knopf" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="held breite">
+  <div class="pfad"><a href="https://finanzcoach.net/">Home</a><span>/</span><a href="https://finanzcoach.net/krankenversicherungen/">Krankenversicherungen</a><span>/</span><span>Gesetzliche Krankenversicherung</span></div>
+  <div class="bild"><img src="https://cdn.makleraccess.de/wp-content/uploads/sites/1469/2016/02/krankenzusatz-1170x658.jpg" alt="" width="1170" height="658"></div>
+</section>
+
+<main class="inhalt breite">
+  <div>
+    <h1>Gesetzliche Krankenversicherung vergleichen</h1>
+    <div class="rechner">
+      <iframe src="https://www.vgk24.de/krankenkassenvergleich/?vid=00UFWK&amp;agent=on" name="myiFrame" scrolling="yes" allowfullscreen title="Krankenkassenvergleich"></iframe>
+    </div>
+  </div>
+
+  <aside class="kontakt">
+    <h3>Kontakt</h3>
+    <div class="firma">Wirtschaftsberatung Boris Hauschild e. K.</div>
+    <address>Oberländer Str. 4 1/2<br>86163 Augsburg</address>
+    <dl>
+      <dt>Tel.</dt><dd><a href="tel:082134993934">082134993934</a></dd>
+      <dt>Mobil</dt><dd><a href="tel:01727409778">01727409778</a></dd>
+      <dt>Fax</dt><dd>01727409778</dd>
+      <dt>E-Mail</dt><dd><a href="mailto:hauschild@finanzcoach.net">hauschild@finanzcoach.net</a></dd>
+    </dl>
+    <a class="knopf" href="https://finanzcoach.net/service-center/beratungstermin-vereinbaren/">Beratungstermin vereinbaren</a>
+  </aside>
+</main>
+
+<footer>
+  <div class="breite">
+    <p class="text">Wirtschaftsberatung Boris Hauschild e. K. e. K. bietet umfangreiche Beratung und Betreuung in allen Versicherungsfragen. Rufen Sie uns einfach an und vereinbaren Sie einen unverbindlichen und kostenlosen Beratungstermin - damit Sie mit Sicherheit gut versichert sind.</p>
+    <div class="rechtlich">
+      <a href="https://finanzcoach.net/home/kontakt/anbieterkennung/?page_as_pdf=1">Erstinformation nach §15 VersVermV (als PDF anzeigen / herunterladen)</a>
+      <a href="https://finanzcoach.net/_/digitaler-widerruf">Vertrag widerrufen</a>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="breite">
+      <span>Copyright 2026</span>
+      <span>Wirtschaftsberatung Boris Hauschild e. K.</span>
+      <span>Oberländer Str. 4 1/2</span>
+      <span>86163 Augsburg</span>
+      <span>Tel.: 082134993934</span>
+      <span>Fax: 01727409778</span>
+      <a href="mailto:hauschild@finanzcoach.net">hauschild@finanzcoach.net</a>
+      <span>Alle Rechte vorbehalten</span>
+    </div>
+  </div>
+</footer>
+
+<div class="chat" id="chat">
+  <div class="chat-feld">
+    <h4>Was können wir für Sie tun?</h4>
+    <p>Zur Zeit sind wir leider nicht online, Sie können jedoch einen Beratungstermin vereinbaren.</p>
+    <a class="knopf" href="https://finanzcoach.net/service-center/beratungstermin-vereinbaren/">Beratungstermin vereinbaren</a>
+  </div>
+  <button class="chat-knopf" id="chat-knopf" aria-expanded="false">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+    <span>Was können wir für Sie tun?</span>
+  </button>
+</div>
+
+<script>
+  const kopf = document.getElementById("kopf");
+  const menueKnopf = document.getElementById("menue-knopf");
+  menueKnopf.addEventListener("click", () => {
+    const offen = kopf.classList.toggle("offen");
+    menueKnopf.setAttribute("aria-expanded", offen);
+  });
+  // Am Handy klappt der erste Tipp auf einen Hauptpunkt die Unterseiten auf
+  document.querySelectorAll("nav.haupt > ul > li > a").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (!kopf.classList.contains("offen")) return;
+      const li = a.parentElement;
+      if (!li.classList.contains("auf")) { e.preventDefault(); li.classList.add("auf"); }
+    });
+  });
+  const chat = document.getElementById("chat");
+  const chatKnopf = document.getElementById("chat-knopf");
+  chatKnopf.addEventListener("click", () => {
+    const offen = chat.classList.toggle("offen");
+    chatKnopf.setAttribute("aria-expanded", offen);
+  });
+</script>
+</body>
+</html>
